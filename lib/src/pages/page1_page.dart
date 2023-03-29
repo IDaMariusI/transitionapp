@@ -34,11 +34,16 @@ class Page1Page extends StatelessWidget {
           curve: Curves.easeInOut,
         );
 
-        return SlideTransition(
-          position: Tween<Offset>(
-            begin: const Offset(0.5, 1.0),
-            end: Offset.zero,
-          ).animate(curvedAnimation),
+        // return SlideTransition(
+        //   position: Tween<Offset>(
+        //     begin: const Offset(0.5, 1.0),
+        //     end: Offset.zero,
+        //   ).animate(curvedAnimation),
+        //   child: child,
+        // );
+
+        return ScaleTransition(
+          scale: Tween<double>(begin: 0.0, end: 1.0).animate(curvedAnimation),
           child: child,
         );
       },
